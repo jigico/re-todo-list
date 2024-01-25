@@ -3,7 +3,7 @@ import React from 'react'
 export default function Todo({todoData, deleteItem, toggleDoneState}) {
   const {title, contents, isDone} = todoData;
   return (
-    <li className='item'>
+    <li className={isDone ? 'item done' : 'item'}>
       <h3 className='title'>{title}</h3>
       <p className='contents'>{contents}</p>
       <div className='btn-box'>
