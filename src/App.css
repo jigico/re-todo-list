@@ -1,38 +1,100 @@
-.App {
+.layout-600 {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.main-header {
+  padding: 15px;
   text-align: center;
+  font-weight: bold;
+  font-size: 25px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.input {
+  margin: 0 5px;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* btn 공통 */
+button[class^="btn-"] {
+  padding: 4px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btn-blue {
+  color: #fff;
+  background-color: #0b60b0;
+  border: 1px solid #0b60b0;
+}
+.btn-red {
+  color: #ff0000;
+  background-color: transparent;
+  border: 2px solid #ff0000;
+}
+.btn-green {
+  color: #0d7403;
+  background-color: transparent;
+  border: 2px solid #0d7403;
+}
+
+.todo-input-area {
+  padding: 15px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.todo-input-area label {
+  margin-right: 10px;
+  display: inline-flex;
+  align-items: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.page-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.todo-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  min-height: 150px;
+}
+.item {
+  margin: 10px 5px;
+  padding: 15px;
+  display: inline-block;
+  width: calc(50% - 10px);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.item.done {
+  background: #f7f7f7;
+}
+.title {
+  font-weight: bold;
+  color: #000;
+}
+.contents {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #000;
+}
+.done .title,
+.done .contents {
+  color: #999;
+}
+.btn-box {
+  display: flex;
+  margin-top: 10px;
+}
+.btn-box .btn-red,
+.btn-box .btn-green {
+  width: 100%;
+}
+.btn-box .btn-green {
+  margin-left: 10px;
 }
