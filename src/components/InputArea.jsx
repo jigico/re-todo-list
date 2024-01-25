@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {v4 as uuidv4} from 'uuid'
-import TodoList from './TodoList';
 
-export default function InputArea() {
-  const [todoData, setTodoData] = useState([]);
-
+export default function InputArea({todoData, setTodoData}) {
   //form submit
   const formHandler = (e) => {
     e.preventDefault();
@@ -29,7 +26,7 @@ export default function InputArea() {
       return
     }
 
-    setTodoData((prev) => [newTodoObj, ...prev]);
+    setTodoData([newTodoObj, ...todoData]);
     e.target.reset();
   }
 
@@ -42,7 +39,7 @@ export default function InputArea() {
         </div>
         <button type='submit' className='btn-blue'>추가하기</button>
       </form>
-      <TodoList todoData={todoData} />
+      
     </>
   )
 }
