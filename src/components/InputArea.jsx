@@ -3,12 +3,7 @@ import {v4 as uuidv4} from 'uuid'
 import TodoList from './TodoList';
 
 export default function InputArea() {
-  const [todoData, setTodoData] = useState([{
-    id:1,
-    title:'테스트',
-    contents:'테스트22',
-    isDone:false
-  }]);
+  const [todoData, setTodoData] = useState([]);
 
   //form submit
   const formHandler = (e) => {
@@ -23,6 +18,17 @@ export default function InputArea() {
       contents,
       isDone:false
     }
+    if(title.trim() === ''){
+      alert('제목을 입력해주세요.');
+      e.target.title.focus();
+      return
+    }
+    if(contents.trim() === ''){
+      alert('내용을 입력해주세요.');
+      e.target.contents.focus();
+      return
+    }
+
     setTodoData((prev) => [newTodoObj, ...prev]);
     e.target.reset();
   }
