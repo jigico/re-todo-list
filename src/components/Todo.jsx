@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Todo({todoData, deleteItem, toggleDoneState, completeItem}) {
+export default function Todo({todoData, deleteItem, toggleDoneState}) {
   const {title, contents, isDone} = todoData;
   return (
     <li className='item'>
